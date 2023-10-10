@@ -1,0 +1,38 @@
+body{
+    background-color: black;
+}
+
+h1,h2{
+    text-align: center;
+    color: white;
+}
+
+p{
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+ol li{
+    color: white;
+    padding-left: 50px;
+  
+    /* display: inline-block; */
+    text-align: left;
+      
+}
+
+div.list {
+    text-align: center;
+  }
+
+div.list p{
+    font-size: 20px;
+}
+  
+  ol {
+    display: inline-block;
+    text-align: left;
+    color: white;
+  }
+
