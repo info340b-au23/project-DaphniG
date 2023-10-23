@@ -39,50 +39,50 @@ nav ul li{
 
 /* naishla page */
 
-.userprof.flex-containter{
+flex-containter{
     display: flex;
 }
 
-.userprof header .flex-item:nth-child(1){
+ header .flex-item:nth-child(1){
     display: flex;
     background-color:grey ;
     flex-wrap:wrap;
     padding-top: 4rem;
     padding-bottom: 1rem;
 }
-.userprof header div:nth-child(2){
+ header div:nth-child(2){
     padding-left: 2rem;
 }
 
-.userprof.flex-item{
+.flex-item{
     display: flex;
     flex-wrap:nowrap;
     height: 100%;
 }
 
-.userprof.flexcard{
+.flexcard{
     flex: 0 0 250px;
     background-color: white;
     margin: 0.5rem;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
-.userprof.flexcard p {
+.flexcard p {
     text-align: center;
 }
 
-.userprof.flexcal{
+.flexcal{
     background-color: white;
     border: 2px solid #7ab4ff;
     flex: 0 0 250px;
 }
 
-.userprof.flexcal p{
+.flexcal p{
     text-align: center;
 
 }
 
-.userprof.flexcal ul{
+.flexcal ul{
     list-style-type: none;
 }
 
