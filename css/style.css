@@ -1,143 +1,143 @@
 /*  webpage styling; */
 body{
-    font-family: "Nunito Sans", "Arial", sans-serif;
-    font-size: 16px;
-    background-color: #f0f0f0;
-    /* background-color: #f8d3c5  ; */
+  font-family: "Nunito Sans", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  /* background-color: #f8d3c5  ; */
 } 
 *{
-    box-sizing: border-box;
-  }
-  html {
-    height: 100%;
-  }
- nav{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: white;
-    background-color: #2c96bf;
-    padding: 0.5rem;
-    padding-bottom: 1rem;
- }
- 
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+nav{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background-color: #2c96bf;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+}
+
 nav ul{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 nav ul li{
-    display: flex;
-    margin: 0 1rem;
+  display: flex;
+  margin: 0 1rem;
 } 
 .imgself{
-    height: 150px;
-    width:150px;
+  height: 150px;
+  width:150px;
 
 }
 
 /* naishla page */
 
-flex-containter{
+.userprof.flex-containter{
     display: flex;
 }
 
- header .flex-item:nth-child(1){
+.userprof header .flex-item:nth-child(1){
     display: flex;
     background-color:grey ;
     flex-wrap:wrap;
     padding-top: 4rem;
     padding-bottom: 1rem;
 }
- header div:nth-child(2){
+.userprof header div:nth-child(2){
     padding-left: 2rem;
 }
 
-.flex-item{
+.userprof.flex-item{
     display: flex;
     flex-wrap:nowrap;
     height: 100%;
 }
 
-.flexcard{
+.userprof.flexcard{
     flex: 0 0 250px;
     background-color: white;
     margin: 0.5rem;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
-.flexcard p {
+.userprof.flexcard p {
     text-align: center;
 }
 
-.flexcal{
+.userprof.flexcal{
     background-color: white;
     border: 2px solid #7ab4ff;
     flex: 0 0 250px;
 }
 
-.flexcal p{
+.userprof.flexcal p{
     text-align: center;
 
 }
 
-.flexcal ul{
+.userprof.flexcal ul{
     list-style-type: none;
 }
 
-  
-  
-  
- /* Daphni CSS Styling  */
 
- .products body {
-    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-    margin: 0;
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    
+
+
+/* Daphni CSS Styling  */
+
+.products body {
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  margin: 0;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 
 .my {
-  background-color: #667b68; /* Background color */
-  padding: .3rem; /* Add some padding to the navigation */
-  padding-top: 30px;
-  opacity: .7;
+background-color: #667b68; /* Background color */
+padding: .3rem; /* Add some padding to the navigation */
+padding-top: 30px;
+opacity: .7;
 
-  
-  display: flex;
-  align-items: center;
+
+display: flex;
+align-items: center;
 }
 
 .my img {
-  height: 30px; /* Set the desired height for the icon */
-  margin-right: 10px; /* Add some spacing between the icon and the text */
+height: 30px; /* Set the desired height for the icon */
+margin-right: 10px; /* Add some spacing between the icon and the text */
 }
 
 .my ul {
-  list-style: none; /* Remove default list styling */
-  padding: 0; /* Remove default padding */
-  padding-bottom: 20px;
+list-style: none; /* Remove default list styling */
+padding: 0; /* Remove default padding */
+padding-bottom: 20px;
 }
 
 .my li {
-  display: inline; /* Display list items inline */
-  margin-right: 1rem; /* Add some spacing between list items */
+display: inline; /* Display list items inline */
+margin-right: 1rem; /* Add some spacing between list items */
 }
 
 .my li a {
-  text-decoration: none; /* Remove underline from links */
-  color: white; /* Set text color to white */
-  font-weight: bold; /* Make text bold */
-  font-size: 1.2rem; /* Set font size */
-  
+text-decoration: none; /* Remove underline from links */
+color: white; /* Set text color to white */
+font-weight: bold; /* Make text bold */
+font-size: 1.2rem; /* Set font size */
+
 }
 
 .my li a:hover {
-  text-decoration: underline; /* Underline on hover */
+text-decoration: underline; /* Underline on hover */
 }
 
 
@@ -146,147 +146,143 @@ flex-containter{
 
 
 h2{
-  color: white;
-  text-align: center;
+color: white;
+text-align: center;
 }
 
-  .back{
-   
-    /* background-color: #667b68; */
-    background-image: url(../img/backdrop.jpg);
-    padding-top: 4rem; /* Adjust the top padding as needed */
-    padding-bottom: 1rem; /* Adjust the bottom padding as needed */
-    opacity: .7;
-  
+.back{
+ 
+  /* background-color: #667b68; */
+  background-image: url(../img/backdrop.jpg);
+  padding-top: 4rem; /* Adjust the top padding as needed */
+  padding-bottom: 1rem; /* Adjust the bottom padding as needed */
+  opacity: .7;
+
 }
 
 header h1{
-  color: white;
-  text-align: center;
-  opacity: 1;
-  
+color: white;
+text-align: center;
+opacity: 1;
+
 
 }
 
 .diff {
-  text-align: center;
-  font-size: 100px;
-  padding: 0;
-  margin: 0; /* Added to remove any margin */
-  color: white;
+text-align: center;
+font-size: 100px;
+padding: 0;
+margin: 0; /* Added to remove any margin */
+color: white;
 }
-  
-  main {
-    flex: 1;
-    /* background-color: #f8d3c5; */
-  }
-  
-  .container { 
-    /* background-color: #f8d3c5; */
-    display: flex;
-    height: 100%;
-    
-  }
-  
-  .container section{
-    /* background-color: #f8d3c5; */
-    padding: 1em;
-  }
-  
-  
-  .first-box{
-    
-    flex-basis: 240px;
-  }
-  
-  .second-box{
-    background-color: #E3D7BD;
-    
-    flex: 1;
-    flex-basis: 0;
-    /* background-color: #eee; */
-  }
 
- 
-  
-  .third-box{
-    flex-basis: 180px;
-    flex-shrink: 0;
-    background-color: #a3b899;
-    
-    
-    
-  
-  
-  }
-  
-  .second-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .second-container div {
-    flex: 0 0 250px;
-    background-color: #a3b899;
-    padding-top: 10px;
-    margin: 0.5rem;
-    border-radius: 10px;
-    /* border-top-left-radius: 10px; */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-  
-  
-  }
-  
-  .second-container div img {
-    /* max-width: 100%; */
-    border-top-left-radius: 10px; /* Rounded corners for the top-left corner of the image */
-    border-top-right-radius: 10px; /* Rounded corners for the top-right corner of the image */
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    
-  }
-  
-  .second-container p{
-    padding: 0.5rem 1rem;
-    text-align: center;
-  
-  }
+main {
+  flex: 1;
+  /* background-color: #f8d3c5; */
+}
 
-  img {
-    /* border: 1px solid #f8d3c5; */
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 50%; */
-    
-  }
+.container { 
+  /* background-color: #f8d3c5; */
+  display: flex;
+  height: 100%;
   
-  .no-bullets {
-    list-style: none;
-    padding: 0;
+}
+
+.container section{
+  /* background-color: #f8d3c5; */
+  padding: 1em;
+}
+
+
+.first-box{
+  
+  flex-basis: 240px;
+}
+
+.second-box{
+  background-color: #E3D7BD;
+  
+  flex: 1;
+  flex-basis: 0;
+  /* background-color: #eee; */
+}
+
+
+
+.third-box{
+  flex-basis: 180px;
+  flex-shrink: 0;
+  background-color: #a3b899;
+  
+  
+  
+
+
+}
+
+.second-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.second-container div {
+  flex: 0 0 250px;
+  background-color: #a3b899;
+  padding-top: 10px;
+  margin: 0.5rem;
+  border-radius: 10px;
+  /* border-top-left-radius: 10px; */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+
+
+}
+
+.second-container div img {
+  /* max-width: 100%; */
+  border-top-left-radius: 10px; /* Rounded corners for the top-left corner of the image */
+  border-top-right-radius: 10px; /* Rounded corners for the top-right corner of the image */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  
+}
+
+.second-container p{
+  padding: 0.5rem 1rem;
+  text-align: center;
+
+}
+
+img {
+  /* border: 1px solid #f8d3c5; */
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+  
+}
+
+.no-bullets {
+  list-style: none;
+  padding: 0;
 }
 
 .no-bullets li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    color: white;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: white;
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  background-color: #a3b899;
-  
-  color: #fff;
+display: flex;
+justify-content: center;
+padding: 5px;
+background-color: #a3b899;
+
+color: #fff;
 }
-
-
-
-
