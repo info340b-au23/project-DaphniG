@@ -1,3 +1,4 @@
+/*  webpage styling; */
 body{
     font-family: "Nunito Sans", "Arial", sans-serif;
     font-size: 16px;
@@ -32,6 +33,7 @@ nav ul li{
 .imgself{
     height: 150px;
     width:150px;
+>>>>>>> 4a9b872dc00d53ee879cfbbd0f885af69de5cd93
 }
 
 .flex-containter{
