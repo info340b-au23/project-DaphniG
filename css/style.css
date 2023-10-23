@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
 }
@@ -69,5 +70,89 @@ h1 {
   width: 30px;
   height: 30px;
   margin-bottom: 3px;
+=======
+/*  webpage styling; */
+body{
+    font-family: "Nunito Sans", "Arial", sans-serif;
+    font-size: 16px;
+    background-color: #f0f0f0;
+} 
+*{
+    box-sizing: border-box;
+  }
+  html {
+    height: 100%;
+  }
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: #2c96bf;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+nav ul li{
+    display: flex;
+    margin: 0 1rem;
+}
+.imgself{
+    height: 150px;
+    width:150px;
+>>>>>>> 4a9b872dc00d53ee879cfbbd0f885af69de5cd93
 }
 
+.flex-containter{
+    display: flex;
+}
+
+header .flex-item:nth-child(1){
+    display: flex;
+    background-color:grey ;
+    flex-wrap:wrap;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+header div:nth-child(2){
+    padding-left: 2rem;
+}
+
+.flex-item{
+    display: flex;
+    flex-wrap:nowrap;
+    height: 100%;
+}
+
+.flexcard{
+    flex: 0 0 250px;
+    background-color: white;
+    margin: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+}
+.flexcard p {
+    text-align: center;
+}
+
+.flexcal{
+    background-color: white;
+    border: 2px solid #7ab4ff;
+    flex: 1 0 auto;
+}
+
+.flexcal p{
+    text-align: center;
+
+}
+
+.flexcal ul{
+    list-style-type: none;
+
+
+}
