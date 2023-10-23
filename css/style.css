@@ -352,3 +352,20 @@ color: #fff;
   margin-bottom: 3px;
 }
 
+/* Quix page */
+.quiz-container{
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 5px;
+}
+.question {
+  font-weight: bold;
+  margin-bottom: 10px; 
+  padding-top: 10px;
+}
+.options label {
+  display: block;
+  margin-bottom: 10px;
+}
