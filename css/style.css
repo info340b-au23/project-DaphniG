@@ -37,55 +37,53 @@ nav ul li{
 
 }
 
-/* home page */
+/* naishla page */
 
-.flex-containter{
+.userprof.flex-containter{
     display: flex;
 }
 
-header .flex-item:nth-child(1){
+.userprof header .flex-item:nth-child(1){
     display: flex;
     background-color:grey ;
     flex-wrap:wrap;
     padding-top: 4rem;
     padding-bottom: 1rem;
 }
-header div:nth-child(2){
+.userprof header div:nth-child(2){
     padding-left: 2rem;
 }
 
-.flex-item{
+.userprof.flex-item{
     display: flex;
     flex-wrap:nowrap;
     height: 100%;
 }
 
-.flexcard{
+.userprof.flexcard{
     flex: 0 0 250px;
     background-color: white;
     margin: 0.5rem;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
-.flexcard p {
+.userprof.flexcard p {
     text-align: center;
 }
 
-.flexcal{
+.userprof.flexcal{
     background-color: white;
     border: 2px solid #7ab4ff;
     flex: 0 0 250px;
 }
 
-.flexcal p{
+.userprof.flexcal p{
     text-align: center;
 
 }
 
-.flexcal ul{
+.userprof.flexcal ul{
     list-style-type: none;
-
-
 }
 
   
