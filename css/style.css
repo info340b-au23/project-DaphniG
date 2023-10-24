@@ -468,7 +468,31 @@ main {
   margin-bottom: 3px;
 }
 
-/* Quix page */
+@media (max-width: 779px) {
+  #hamburger-menu {
+    display: block;
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+  #menubar {
+    display: none;
+  }
+  nav li a {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 779px) {
+  #hamburger-menu {
+    display: none;
+  }
+  #menubar {
+    display: block;
+  }
+}
+
+/* Quiz page */
 
 .quiz-container{
   max-width: 1200px;
