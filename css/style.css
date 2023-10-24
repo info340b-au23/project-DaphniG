@@ -58,6 +58,32 @@ nav p {
   align-items: center;
 }
 
+
+@media (max-width: 779px) {
+  #hamburger-menu {
+    display: block;
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+  #menubar {
+    display: none;
+  }
+  nav li a {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 779px) {
+  #hamburger-menu {
+    display: none;
+  }
+  #menubar {
+    display: block;
+  }
+}
+
+
 /* icon image */
 img {
   border-radius: 4px;
