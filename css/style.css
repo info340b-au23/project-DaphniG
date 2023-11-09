@@ -119,31 +119,6 @@ header .flex-item:nth-child(1){
   flex-wrap:wrap;
   padding-top: 4rem;
   padding-bottom: 1rem;
-  align-items: flex-start;
-}
-header .flex-item img.imgself {
-  max-width: 150px;
-  max-height: 150px;
-  border-radius: 50%; /* Set border-radius to create a circular image */
-  margin-right: 20px;
-}
-
-header .flex-item h1 {
-  font-size: 24px;
-  margin: 0;
-  text-align: left;
-}
-
-header .flex-item p {
-  font-size: 16px;
-  margin: 5px 0;
-  text-align: left; /* Align p elements to the left */
-}
-
-@media (max-width: 779px) {
-  header .flex-item img.imgself {
-    display: none;
-  }
 }
 
 header div:nth-child(2){
@@ -154,18 +129,14 @@ header div:nth-child(2){
   display: flex;
   flex-wrap:nowrap;
   height: 100%;
-  overflow-x: auto; 
-  white-space: nowrap;
 }
 
 .flexcard{
-  flex: 0 2 250px;
+  flex: 0 0 250px;
   background-color: white;
   margin: 0.5rem;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-  overflow-x: auto; 
-  white-space: nowrap;
 }
 
 .flexcard p {
@@ -175,12 +146,7 @@ header div:nth-child(2){
 .flexcal{
   background-color: white;
   border: 2px solid #7ab4ff;
-  flex: 0 2 250px;
-  overflow-x: auto; 
-  white-space: nowrap;
-  margin: 0.5rem;
-
-
+  flex: 0 0 250px;
 }
 
 .flexcal p{
@@ -189,22 +155,10 @@ header div:nth-child(2){
 
 .flexcal ul{
   list-style-type: none;
-
 }
 
 /* Daphni CSS Styling  */
 
-/* @media (max-width: 779px) {
-  .flex-container {
-    flex-direction: column;
-  }
-}
-
-@media (min-width: 779px) {
-  .flex-container {
-    flex-direction: column;
-  }
-} */
 
 .products body {
   margin: 0;
@@ -338,59 +292,6 @@ main {
   }
 }
 
-
-/* 
-
-.container { 
-  display: flex;
-  height: 100%;
-}
-
-
-.plus {
-  text-align: center;
-  font-size: 100px;
-  padding: 0;
-  margin: 0; 
-  color: white;
-}
-
-.container section{
-  padding: 1em;
-}
-
-.cards {
-  background-color: #E3D7BD;
-  flex: 1;
-  flex-basis: 0;
-}
-
-.second-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.second-container div {
-  flex: 0 0 250px;
-  background-color: #a3b899;
-  padding-top: 10px;
-  margin: 0.5rem;
-  border-radius: 10px;
-}
-
-.second-container div img {
-  border-top-left-radius: 10px; 
-  border-top-right-radius: 10px; 
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.second-container p{
-  padding: 0.5rem 1rem;
-  text-align: center;
-} */
-
 .filters {
   flex-basis: 180px;
   flex-shrink: 0;
@@ -468,31 +369,7 @@ main {
   margin-bottom: 3px;
 }
 
-@media (max-width: 779px) {
-  #hamburger-menu {
-    display: block;
-    font-size: 2rem;
-    padding-left: 1rem;
-  }
-  #menubar {
-    display: none;
-  }
-  nav li a {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 779px) {
-  #hamburger-menu {
-    display: none;
-  }
-  #menubar {
-    display: block;
-  }
-}
-
-/* Quiz page */
+/* Quix page */
 
 .quiz-container{
   max-width: 1200px;
