@@ -1,22 +1,52 @@
 import React from 'react';
-import './css/style.css';
-// import './img'
-import { NavBar, ProductContainer } from './product-routine.js';
+import NavBar from './NavBar.js';
+import {ProductPage} from './ProductPage';
+//import {QuizForm} from './components/quiz'
+import { ProfileContainer } from './profile';
+import {ProductContainer } from './product-routine.js';
 
 
-//A component!
-export default function App() {
+// export default function App(props) {
+    
+//     return (
+//     <div>
+//     <ProfileContainer/>
+//     </div> 
+//     )
+// };
 
+export default function App(props) {
+ return (
+   <div>
+     <NavBar />
+     {/* <header className="product-name">
+       <h1>Cleanser</h1>
+       <h2>Pick a Cleanser</h2>
+     </header> */}
+     <main>
+       {/* <div className="container">
+       <ProductPage />
+       
+       
+       </div> */}
+       {/* <div>
+       <ProfileContainer/>
+       </div> */}
 
-  //what content should my App look like?
-  return (
-    <div>
-      <NavBar />
+<div>
+      
       <h1 className="routine">Build Your Skincare Routine!</h1>
       <ProductContainer />
-      <footer>
-        <p>© 2023 George, Clement, Miranda</p>
-      </footer>
+      
     </div>
-  );
+     </main>
+     <footer>
+       <p>© 2023 George, Clement, Miranda</p>
+     </footer>
+   </div>
+ );
 }
+
+
+
+
