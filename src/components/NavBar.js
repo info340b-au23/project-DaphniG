@@ -9,7 +9,7 @@ function NavBar() {
       </div>
       <div id="menubar">
         <ul>
-          <li><a href="index.html">My Profile</a></li>
+          <li><a href="/profile">My Profile</a></li>
           <li><a href="product-routine.html">Skincare Routine</a></li>
           <li><a href="products.html"> Build Routine</a></li>
           <li><a href="quiz.html">Skin Quiz</a></li>

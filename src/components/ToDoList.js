@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 function TodoList() {
-  const initialTodos = ['Click to Add','Click to Add','Click to Add'];
+  const initialTodos = ['cleanser','serum','add product'];
   const [todos, setTodos] = useState(initialTodos);
   const [editIndex, setEditIndex] = useState(null);
   const [newTodo, setNewTodo] = useState('');

@@ -12,7 +12,7 @@ function Progresssquares(props) {
     ));
   
     return (
-      <div className="flexrows">
+      <div className="flexrows scrollmenu">
         <h2 className="profile-tool-titles">Skin Progress</h2>
         <section className="flex-item">
           {productsavedimage}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import icon from './img/backdrop.jpg.';
+import icon from './img/backdrop.jpg';
 
 export function NavBar() {
     return (
@@ -14,7 +14,7 @@ export function NavBar() {
                     <li><a href="quiz.html">Skin Quiz</a></li>
                 </ul>
             </div>
-            {/* <img src={icon} alt="Navigation Icon" /> */}
+            <img src={icon} alt="Navigation Icon" />
             <p>Skintellect</p>
         </nav>
     )

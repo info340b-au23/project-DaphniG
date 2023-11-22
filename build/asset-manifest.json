@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.65db58ad.css",
+    "main.js": "/static/js/main.a5321516.js",
+    "static/media/backdrop.jpg": "/static/media/backdrop.925714088ae4be0817fe.jpg",
+    "static/media/cleanser3.png": "/static/media/cleanser3.690fd02e848a4e102fca.png",
+    "static/media/cleanser5.png": "/static/media/cleanser5.2e7443f235d1a1cb3198.png",
+    "static/media/cleanser6.png": "/static/media/cleanser6.48df5d98db5f8c9b9b8e.png",
+    "static/media/cleanser1.png": "/static/media/cleanser1.702a36c52945fb0d949d.png",
+    "static/media/cleanser2.png": "/static/media/cleanser2.4ac18bef864075705e46.png",
+    "static/media/cleanser4.png": "/static/media/cleanser4.41946de83319e09ae6ec.png",
+    "static/media/progress2.jpg": "/static/media/progress2.f4ccca0555e74a42fb8e.jpg",
+    "static/media/progress1.jpg": "/static/media/progress1.30714861cb01e94b42f8.jpg",
+    "static/media/progress3.jpg": "/static/media/progress3.a8c1602301fbcdbb53fc.jpg",
+    "static/media/profilepic.webp": "/static/media/profilepic.29ddcf5746bce3f9bd6a.webp",
+    "index.html": "/index.html",
+    "main.65db58ad.css.map": "/static/css/main.65db58ad.css.map",
+    "main.a5321516.js.map": "/static/js/main.a5321516.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65db58ad.css",
+    "static/js/main.a5321516.js"
+  ]
+}

@@ -6,7 +6,15 @@ import Progresssquares from './progress';
 // import TodoInput from './Calendar';
 import TodoList from './ToDoList';
 
-
+//images//
+import userprofile from "./img/profilepic.webp";
+import progress1 from "./img/progress1.jpg";
+import progress2 from "./img/progress2.jpg";
+import progress3 from "./img/progress3.jpg";
+import cleanserImage from './img/cleanser1.png';
+import cleanserImage2 from './img/cleanser2.png';
+import cleanserImage3 from './img/cleanser3.png';
+import cleanserImage4 from './img/cleanser4.png';
 
 export function ProfileContainer(props){
 
@@ -30,7 +38,7 @@ function ProfileHeader(props){
         
         <div>
         <img className='imgself' 
-        src="https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png" alt="girl looking into the camera"/>
+        src={userprofile} alt="girl looking into the camera"/>
 
         </div>
 
@@ -47,9 +55,9 @@ function ProfileHeader(props){
 };
 function SkinProgress(props){
     const skinprogressinfo = [
-        { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt:'pic of cleanser', date:"02/11/2023" },
-        { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt:'pic of cleanser', date:"02/11/2023" },
-        { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt:'pic of cleanser', date:"02/11/2023" },
+        { url: progress1, alt:'pic of cleanser', date:"02/11/2023" },
+        { url: progress2, alt:'pic of cleanser', date:"02/11/2023" },
+        { url: progress3, alt:'pic of cleanser', date:"02/11/2023" },
     ]
 
         return (
@@ -72,7 +80,7 @@ function SkinCalender(props){
     //     setTodos((prevTodos)=>[...prevTodos, newTodo]);
     // };
     return(
-    <div className='flexrow'>
+    <div className='todo-flexrow'>
         <div className="todo-container">
             <h2>Day 1</h2>
             <TodoList todos={todos1} />
@@ -95,71 +103,23 @@ function SkinCalender(props){
         </div>
       
         </div>
-    //     <div class="flexrows">
-    //     <h2> Skin Cycling Calender</h2>
-    // <section class="flex-item">
-    //     <div class="flexcal">
-    //     <p> Day 1</p>
-    //         <ul>
-    //             <li>cleanser</li>
-    //             <li>Toner</li> 
-    //             <li>Vitamin C Serum</li> 
-    //             <li>Moisturizer</li> 
-    //             <li>Sunscreen</li> 
-    //             <li>Cleanser</li> 
-    //             <li>Exfoliation</li>
-    //             <li>Toner</li>  
-    //             <li>Eye Cream</li> 
-    //             <li>Moisturizer</li> 
-    //         </ul> 
-    //     </div>
-    //     <div class="flexcal">
-    //     <p> Day 2</p>
-    //     <ul><li>cleanser</li>
-    //         <li>Toner</li> 
-    //         <li>Vitamin C Serum</li> 
-    //         <li>Moisturizer</li> 
-    //         <li>Sunscreen</li> 
-    //         <li>Cleanser</li> 
-    //         <li>Exfoliation</li>
-    //         <li>Toner</li>  
-    //         <li>Eye Cream</li> 
-    //         <li>Moisturizer</li> 
-    //     </ul> 
-    //     </div>
-
-    //     <div class="flexcal">
-    //     <p> Day 3</p>
-    //     <ul>
-    //         <li>cleanser</li>
-    //         <li>Toner</li> 
-    //         <li>Vitamin C Serum</li> 
-    //         <li>Moisturizer</li> 
-    //         <li>Sunscreen</li> 
-    //     </ul> 
-    //     </div>
-    //     <div class="flexcal">
-    //         <p> Day 4</p>
-    //         <ul><li> Rest</li> </ul> 
-    //     </div>
-    // </section>
-    // </div>
+    
     )
 };
 
 
 function SavedDataProducts(props) {
     const productsavedlist = [
-      { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt:'pic of cleanser' },
-      { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt: 'Alt text 2' },
-      { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt: 'Alt text 3' },
-      { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt: 'Alt text 2' },
-      { url: 'https://pbs.twimg.com/profile_images/1440775265928417284/ywTBFW6L_400x400.png', alt: 'Alt text 3' },
+      { url: cleanserImage, alt:'pic of cleanser' },
+      { url: cleanserImage2, alt: 'Alt text 2' },
+      { url: cleanserImage3, alt: 'Alt text 3' },
+      { url: cleanserImage4, alt: 'Alt text 2' },
+      { url: cleanserImage2, alt: 'Alt text 3' },
     ];
 
 
     return (
-      <div>
+      <div className='scrollmenu'>
         <h2 className="profile-tool-titles">Saved Products</h2>
         {/* Render the SavedProducts component and pass the productsavedlist as a prop */}
         <SavedProducts productsavedlist={productsavedlist} />

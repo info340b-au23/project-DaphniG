@@ -14,7 +14,7 @@ function SavedProducts(props) {
   return (
     <div className="flexrows">
       { /* make it into a button to product page*/}
-      <h3 >Search for Products </h3> 
+      {/* <h3 >Search for Products </h3>  */}
       <section className="flex-item">
         {productsavedimage}
       </section>

@@ -109,9 +109,23 @@ footer {
 
 /* naishla page */
 
-.flex-containter{
-  display: flex;
+/* profile Styling */
+.profile-tool-titles{
+  margin-top: 20px;
+  padding-left: 1rem;
 }
+
+.flex-containter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .center-container {
+    width: 100%;
+    text-align: center;
+  }
 
 header .flex-item:nth-child(1){
   display: flex;
@@ -119,6 +133,9 @@ header .flex-item:nth-child(1){
   flex-wrap:wrap;
   padding-top: 4rem;
   padding-bottom: 1rem;
+  padding-left: 4rem;
+  color: white;
+  text-align: center;
 }
 
 header div:nth-child(2){
@@ -129,6 +146,9 @@ header div:nth-child(2){
   display: flex;
   flex-wrap:nowrap;
   height: 100%;
+  width: auto;
+  text-align: center;
+  padding-left: 1rem;
 }
 
 .flexcard{
@@ -156,6 +176,55 @@ header div:nth-child(2){
 .flexcal ul{
   list-style-type: none;
 }
+/* calendar todo */
+  /* styles.css */
+  .todo-flexrow{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .todo-container {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+    max-width: 300px;
+    margin-right: 20px; /* Adjust the margin as needed */
+
+  }
+
+  .todo-container:last-child {
+    margin-right: 0;
+  }
+
+  .todo-input {
+    margin-bottom: 10px;
+  }
+
+  .todo-list {
+    margin-top: 10px;
+  }
+
+  .todo-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .todo-list li {
+    margin-bottom: 8px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+
+/* Scrollmenu*/
+.scrollmenu{
+  overflow: auto;
+  white-space: nowrap;
+}
+
 
 /* Daphni CSS Styling  */
 
@@ -477,7 +546,6 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
   border-radius: 5px;
 }
 
