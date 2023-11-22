@@ -115,7 +115,7 @@ footer {
 
 header .flex-item:nth-child(1){
   display: flex;
-  background-color:grey ;
+  background-color:rgb(237, 98, 98) ;
   flex-wrap:wrap;
   padding-top: 4rem;
   padding-bottom: 1rem;
@@ -388,6 +388,4 @@ main {
   display: block;
   margin-bottom: 10px;
 }
-
-
 

@@ -1,14 +1,13 @@
 import React from 'react';
 
 export function quiz(props){
-        const typedvalue = ""
+    //     const typedvalue = ""
     
-    const handleSubmit = (event) => {
-        console.log("submit the form");
-        console.log("post", typedValue);
-        setTypedValue("")
-        }
-    }
+    // const handleSubmit = (event) => {
+    //     console.log("submit the form");
+    //     console.log("post", typedValue);
+    //     setTypedValue("")
+    //     }
 
 return (
 <form id="skin-quiz">
@@ -35,3 +34,6 @@ return (
 
         </form>
     )
+};
+
+export default quiz;
