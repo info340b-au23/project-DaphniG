@@ -19,26 +19,26 @@ export default function App(props) {
  return (
    <div>
      <NavBar />
-     {/* <header className="product-name">
+     <header className="product-name">
        <h1>Cleanser</h1>
        <h2>Pick a Cleanser</h2>
-     </header> */}
+     </header>
      <main>
-       {/* <div className="container">
+       <div className="container">
        <ProductPage />
        
        
-       </div> */}
+       </div>
        {/* <div>
        <ProfileContainer/>
        </div> */}
 
-<div>
+{/* <div>
       
       <h1 className="routine">Build Your Skincare Routine!</h1>
       <ProductContainer />
       
-    </div>
+    </div> */}
      </main>
      <footer>
        <p>© 2023 George, Clement, Miranda</p>
