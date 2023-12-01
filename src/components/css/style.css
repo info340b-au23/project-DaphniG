@@ -58,32 +58,6 @@ nav p {
   align-items: center;
 }
 
-
-@media (max-width: 779px) {
-  #hamburger-menu {
-    display: block;
-    font-size: 2rem;
-    padding-left: 1rem;
-  }
-  #menubar {
-    display: none;
-  }
-  nav li a {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 779px) {
-  #hamburger-menu {
-    display: none;
-  }
-  #menubar {
-    display: block;
-  }
-}
-
-
 /* icon image */
 img {
   border-radius: 4px;
@@ -247,7 +221,7 @@ main {
 }
 
 .product-name {
-  /* background-image: url(../img/backdrop.jpg); */
+  background-image: url(../img/backdrop.jpg);
   padding-top: 4rem;
   padding-bottom: 1rem;
   opacity: .7;
@@ -257,7 +231,7 @@ main {
 
 .container {
   display: flex;
-  flex-direction: col; /* Stack elements vertically on smaller screens */
+  flex-direction: col; 
   height: 100%;
 }
 
@@ -308,58 +282,6 @@ main {
   text-align: center;
 }
 
-/* Responsive styles for smaller screens */
-@media (min-width: 768px) {
-  .container { 
-    display: flex;
-    height: 100%;
-  }
-  
-  
-  .plus {
-    text-align: center;
-    font-size: 100px;
-    padding: 0;
-    margin: 0; 
-    color: white;
-  }
-  
-  .container section{
-    padding: 1em;
-  }
-  
-  .cards {
-    background-color: #E3D7BD;
-    flex: 1;
-    flex-basis: 0;
-  }
-  
-  .second-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .second-container div {
-    flex: 0 0 250px;
-    background-color: #a3b899;
-    padding-top: 10px;
-    margin: 0.5rem;
-    border-radius: 10px;
-  }
-  
-  .second-container div img {
-    border-top-left-radius: 10px; 
-    border-top-right-radius: 10px; 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  
-  .second-container p{
-    padding: 0.5rem 1rem;
-    text-align: center;
-  }
-}
 
 .filters {
   flex-basis: 180px;
@@ -447,6 +369,103 @@ main {
 .add img {
   width: 70px;
   margin-bottom: 3px;
+}
+
+
+
+/* Quiz page */
+
+.quiz-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 10px; 
+  padding-top: 10px;
+}
+.options label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 779px) {
+  #hamburger-menu {
+    display: block;
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+  #menubar {
+    display: none;
+  }
+  nav li a {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 779px) {
+  #hamburger-menu {
+    display: none;
+  }
+  #menubar {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .container { 
+    display: flex;
+    height: 100%;
+  }
+  
+  
+  .plus {
+    text-align: center;
+    font-size: 100px;
+    padding: 0;
+    margin: 0; 
+    color: white;
+  }
+  
+  .container section{
+    padding: 1em;
+  }
+  
+  .cards {
+    background-color: #E3D7BD;
+    flex: 1;
+    flex-basis: 0;
+  }
+  
+  .second-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .second-container div {
+    flex: 0 0 250px;
+    background-color: #a3b899;
+    padding-top: 10px;
+    margin: 0.5rem;
+    border-radius: 10px;
+  }
+  
+  .second-container div img {
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .second-container p{
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
 }
 
 @media (max-width: 576px) {
@@ -539,25 +558,3 @@ main {
     padding: 15px;
   }
 }
-
-/* Quiz page */
-
-.quiz-container{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.question {
-  font-weight: bold;
-  margin-bottom: 10px; 
-  padding-top: 10px;
-}
-.options label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-
-
