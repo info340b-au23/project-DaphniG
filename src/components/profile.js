@@ -111,10 +111,10 @@ function SkinCalender(props){
 function SavedDataProducts(props) {
     const productsavedlist = [
       { url: cleanserImage, alt:'pic of cleanser' },
-      { url: cleanserImage2, alt: 'Alt text 2' },
-      { url: cleanserImage3, alt: 'Alt text 3' },
-      { url: cleanserImage4, alt: 'Alt text 2' },
-      { url: cleanserImage2, alt: 'Alt text 3' },
+      { url: cleanserImage2, alt: 'pic of cleanser' },
+      { url: cleanserImage3, alt: 'pic of cleanser' },
+      { url: cleanserImage4, alt: 'pic of cleanser' },
+      { url: cleanserImage2, alt: 'pic of cleanser' },
     ];
 
 
