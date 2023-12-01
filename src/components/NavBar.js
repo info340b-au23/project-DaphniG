@@ -1,6 +1,7 @@
 import React from 'react';
 import icon from './img/backdrop.jpg';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import { NavLink } from 'react-router-dom';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 
@@ -13,10 +14,10 @@ function NavBar() {
      </div>
      <div id="menubar">
        <ul>
-         <li><a href="index.html">My Profile</a></li>
-         <li><a href="product-routine.html">Skincare Routine</a></li>
-         <li><a href="products.html"> Build Routine</a></li>
-         <li><a href="quiz.html">Skin Quiz</a></li>
+       <li><NavLink to="/login"> Login</NavLink></li>
+      <li><NavLink to="/profile">Profile</NavLink></li>
+      <li><NavLink to="/product">Build Routine</NavLink></li>
+      <li><NavLink to="/quiz">Skin Quiz</NavLink></li>
        </ul>
      </div>
      <img src={icon} alt="Navigation Icon" />

@@ -59,6 +59,7 @@ function SkinProgress(props){
         { url: progress2, alt:'pic of cleanser', date:"02/11/2023" },
         { url: progress3, alt:'pic of cleanser', date:"02/11/2023" },
     ]
+    
 
         return (
             <div>

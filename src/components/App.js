@@ -4,6 +4,8 @@ import {ProductPage} from './ProductPage';
 import {QuizForm} from './quiz.js';
 import { ProfileContainer } from './profile';
 import {ProductContainer } from './product-routine.js';
+import {Login} from './login.js'
+import { Routes,  Route } from 'react-router-dom';
 
 
 // export default function App(props) {
@@ -19,29 +21,15 @@ export default function App(props) {
  return (
    <div>
      <NavBar />
-     <header className="product-name">
-       <h1>Cleanser</h1>
-       <h2>Pick a Cleanser</h2>
-     </header>
-     { <main>
-       <div className="container">
-       <ProductPage />
-       
-       
-       </div>
-       <div>
-       <ProfileContainer/>
-       </div>
-
-  <div>
-      
-      <h1 className="routine">Build Your Skincare Routine!</h1>
-      <ProductContainer />
-  </div>
-  <div>
-    <QuizForm/>
-  </div>
-     </main> }
+     <main>
+          <Routes>
+          <Route path="/" element={<ProductContainer />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<ProfileContainer />} />
+            <Route path="/product" element={<ProductContainer />} />
+            <Route path="/quiz" element={<QuizForm />} />
+          </Routes>
+        </main>
      <footer>
        <p>© 2023 George, Clement, Miranda</p>
      </footer>
