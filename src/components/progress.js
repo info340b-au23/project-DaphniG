@@ -6,8 +6,7 @@ function Progresssquares(props) {
     const productsavedimage = skinprogressinfo.map((product,index) => (
       <div key={index} className="flexcard">
         <img className="imgself" src={product.url} alt={product.alt} />
-        <input type="date"
-        />
+        <input type="date"/>
       </div>
     ));
 
@@ -20,6 +19,7 @@ function Progresssquares(props) {
           setUserPhoto(URL.createObjectURL(file));
   
         }
+        console.log('userPhoto:', userPhoto);
       };
     ;
   
@@ -27,7 +27,6 @@ function Progresssquares(props) {
       <div className="flexrows scrollmenu">
         <h2 className="profile-tool-titles">Skin Progress</h2>
         <section className="flex-item">
-        {productsavedimage}
         {/* File input for uploading a user's own photo */}
         <div className='flexcard'>
         <label htmlFor="fileInput">
@@ -39,8 +38,10 @@ function Progresssquares(props) {
             onChange={handleFileChange}
           />
           <p>Upload Your Own Photo</p>
+          <input type="date"/>
         </label>
         </div>
+        {productsavedimage}
         </section>
       </div>
     );

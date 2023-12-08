@@ -81,7 +81,7 @@ function SkinCalender(props){
     //     setTodos((prevTodos)=>[...prevTodos, newTodo]);
     // };
     return(
-    <div className='todo-flexrow'>
+    <div className='todo-flexrow scrollmenu'>
         <div className="todo-container">
             <h2>Day 1</h2>
             <TodoList todos={todos1} />

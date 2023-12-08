@@ -4,6 +4,7 @@ export function Login(){
 
     return(
         <form id="user-login">
+            <div className='logincontainer'>
             <div className='header-container'>
                 <div className='userloginwelcome'>
                     <h1> Login </h1>
@@ -19,7 +20,7 @@ export function Login(){
             </div>
             <button type="submit">Login</button>
             </div>
-
+            </div>
 
         </form>
         

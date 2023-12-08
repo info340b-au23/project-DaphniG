@@ -49,6 +49,8 @@ export function AddButton() {
 
 export function ProductContainer() {
   return (
+    <main>
+      <h1> Create Your Skincare Routine</h1>
     <div className="container-box">
       <ProductColumn />
       <div className="add-product-column">
@@ -59,5 +61,6 @@ export function ProductContainer() {
         <AddButton />
       </div>
     </div>
+    </main>
   );
 }
