@@ -221,7 +221,7 @@ main {
 }
 
 .product-name {
-  background-image: url(../img/backdrop.jpg);
+  /* background-image: url(../img/backdrop.jpg); */
   padding-top: 4rem;
   padding-bottom: 1rem;
   opacity: .7;
