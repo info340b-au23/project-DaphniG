@@ -1,7 +1,7 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 
 
-import  SavedProducts  from "./SavedProducts";
+import SavedProducts from "./SavedProducts";
 import Progresssquares from './progress';
 // import TodoInput from './Calendar';
 import TodoList from './ToDoList';
@@ -16,62 +16,62 @@ import cleanserImage2 from './img/cleanser2.png';
 import cleanserImage3 from './img/cleanser3.png';
 import cleanserImage4 from './img/cleanser4.png';
 
-export function ProfileContainer(props){
+export function ProfileContainer({ userName }) {
 
-    return(
+    return (
         <div>
-     
-            <ProfileHeader/>
-            <SkinProgress/>
-            <SkinCalender/>
+
+            <ProfileHeader userName={userName} />
+            <SkinProgress />
+            <SkinCalender />
             <SavedDataProducts />
 
         </div>
     )
 };
 
-function ProfileHeader(props){
-    return(
-        <header> 
-        <div className="flex-container center-container">
-        <section className="flex-item">
-        
-        <div>
-        <img className='imgself' 
-        src={userprofile} alt="girl looking into the camera"/>
+function ProfileHeader({ userName }) {
+    return (
+        <header>
+            <div className="flex-container center-container">
+                <section className="flex-item">
 
-        </div>
+                    <div>
+                        <img className='imgself'
+                            src={userprofile} alt="girl looking into the camera" />
 
-        <div className='headertxt'>
-        <h1> Hello Jane Doe!</h1>
-        <p> Skin Type: Dry Combination</p>
-        <p> Skin Concerns: Dryness, Blemishes</p>
+                    </div>
 
-        </div>
-        </section>
-        </div>
+                    <div className='headertxt'>
+                        <h1> Hello {userName}! </h1>
+                        <p> Skin Type: Dry Combination</p>
+                        <p> Skin Concerns: Dryness, Blemishes</p>
+
+                    </div>
+                </section>
+            </div>
         </header>
     )
 };
-function SkinProgress(props){
+function SkinProgress(props) {
     const skinprogressinfo = [
-        { url: progress1, alt:'pic of cleanser', date:"02/11/2023" },
-        { url: progress2, alt:'pic of cleanser', date:"02/11/2023" },
-        { url: progress3, alt:'pic of cleanser', date:"02/11/2023" },
+        { url: progress1, alt: 'pic of cleanser', date: "02/11/2023" },
+        { url: progress2, alt: 'pic of cleanser', date: "02/11/2023" },
+        { url: progress3, alt: 'pic of cleanser', date: "02/11/2023" },
     ]
-    
-
-        return (
-            <div>
-              {/* Render the SavedProducts component and pass the productsavedlist as a prop */}
-              <Progresssquares skinprogressinfo={skinprogressinfo} />
-              {/* Additional content or components can be added here */}
-            </div>
-          );
-        }
 
 
-function SkinCalender(props){
+    return (
+        <div>
+            {/* Render the SavedProducts component and pass the productsavedlist as a prop */}
+            <Progresssquares skinprogressinfo={skinprogressinfo} />
+            {/* Additional content or components can be added here */}
+        </div>
+    );
+}
+
+
+function SkinCalender(props) {
     const [todos1] = useState([]);
     const [todos2] = useState([]);
     const [todos3] = useState([]);
@@ -80,51 +80,51 @@ function SkinCalender(props){
     // const handleAddTodo = (newTodo, setTodos) => {
     //     setTodos((prevTodos)=>[...prevTodos, newTodo]);
     // };
-    return(
-    <div className='todo-flexrow'>
-        <div className="todo-container">
-            <h2>Day 1</h2>
-            <TodoList todos={todos1} />
+    return (
+        <div className='todo-flexrow'>
+            <div className="todo-container">
+                <h2>Day 1</h2>
+                <TodoList todos={todos1} />
+            </div>
+            {/* Second set of TodoInput and TodoList */}
+            <div className="todo-container">
+                <h2>Day 2</h2>
+                {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos2)} /> */}
+                <TodoList todos={todos2} />
+            </div>
+            <div className="todo-container">
+                <h2>Day 3</h2>
+                {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos3)} /> */}
+                <TodoList todos={todos3} />
+            </div>
+            <div className="todo-container">
+                <h2>Day 4</h2>
+                {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos4)} /> */}
+                <TodoList todos={todos4} />
+            </div>
+
         </div>
-             {/* Second set of TodoInput and TodoList */}
-        <div className="todo-container">
-        <h2>Day 2</h2>
-            {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos2)} /> */}
-            <TodoList todos={todos2} />
-        </div>
-        <div className="todo-container">
-        <h2>Day 3</h2>
-            {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos3)} /> */}
-            <TodoList todos={todos3} />
-        </div>
-        <div className="todo-container">
-        <h2>Day 4</h2>
-            {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos4)} /> */}
-            <TodoList todos={todos4} />
-        </div>
-      
-        </div>
-    
+
     )
 };
 
 
 function SavedDataProducts(props) {
     const productsavedlist = [
-      { url: cleanserImage, alt:'pic of cleanser' },
-      { url: cleanserImage2, alt: 'pic of cleanser' },
-      { url: cleanserImage3, alt: 'pic of cleanser' },
-      { url: cleanserImage4, alt: 'pic of cleanser' },
-      { url: cleanserImage2, alt: 'pic of cleanser' },
+        { url: cleanserImage, alt: 'pic of cleanser' },
+        { url: cleanserImage2, alt: 'pic of cleanser' },
+        { url: cleanserImage3, alt: 'pic of cleanser' },
+        { url: cleanserImage4, alt: 'pic of cleanser' },
+        { url: cleanserImage2, alt: 'pic of cleanser' },
     ];
 
 
     return (
-      <div className='scrollmenu'>
-        <h2 className="profile-tool-titles">Saved Products</h2>
-        {/* Render the SavedProducts component and pass the productsavedlist as a prop */}
-        <SavedProducts productsavedlist={productsavedlist} />
-        {/* Additional content or components can be added here */}
-      </div>
+        <div className='scrollmenu'>
+            <h2 className="profile-tool-titles">Saved Products</h2>
+            {/* Render the SavedProducts component and pass the productsavedlist as a prop */}
+            <SavedProducts productsavedlist={productsavedlist} />
+            {/* Additional content or components can be added here */}
+        </div>
     );
-  }
+}
