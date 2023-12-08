@@ -9,22 +9,31 @@ import cleanserImage6 from './img/cleanser6.png';
 import skinCareData from './skin-data.json';
 
 
+
+
 const ProductPage = () => {
- const [sortByPrice, setSortByPrice] = useState(false);
- const [sortAlphabetically, setSortAlphabetically] = useState(false);
-
- const [productsData, setProductsData] = useState([]);
-
- useEffect(() => {
-   // Set the imported JSON data to productsData state
-   setProductsData(skinCareData);
- }, []);
+const [sortByPrice, setSortByPrice] = useState(false);
+const [sortAlphabetically, setSortAlphabetically] = useState(false);
 
 
+const [productsData, setProductsData] = useState([]);
+
+
+useEffect(() => {
+  // Set the imported JSON data to productsData state
+  setProductsData(skinCareData);
+}, []);
 
 
 
- // Product data
+
+
+
+
+
+
+
+// Product data
 //  const productsData =
 //    [
 //        {
@@ -69,44 +78,47 @@ const ProductPage = () => {
 //            'TATCHA The Rice Wash | Soft Cream Facial Cleanser Washes Away Buildup Without Stripping Skin For A Soft, Luminous Complexion | 4 oz',
 //          price: '$13.49',
 //        },
-      
+    
 //      ];
-  
+
+
 
 
 return (
-  <div>
-    <section className="filters">
-      <h2>Filters</h2>
-      <ul className="boxes">
-        <li>
-          <input
-            type="checkbox"
-            id="price-checkbox"
-            onChange={() => setSortByPrice(!sortByPrice)}
-            checked={sortByPrice}
-          />
-          <label htmlFor="price-checkbox">Sort by Price</label>
-        </li>
-        <li>
-          <input
-            type="checkbox"
-            id="alpha-checkbox"
-            onChange={() => setSortAlphabetically(!sortAlphabetically)}
-            checked={sortAlphabetically}
-          />
-          <label htmlFor="alpha-checkbox">Sort Alphabetically</label>
-        </li>
-      </ul>
-    </section>
+ <div>
+   <section className="filters">
+     <h2>Filters</h2>
+     <ul className="boxes">
+       <li>
+         <input
+           type="checkbox"
+           id="price-checkbox"
+           onChange={() => setSortByPrice(!sortByPrice)}
+           checked={sortByPrice}
+         />
+         <label htmlFor="price-checkbox">Sort by Price</label>
+       </li>
+       <li>
+         <input
+           type="checkbox"
+           id="alpha-checkbox"
+           onChange={() => setSortAlphabetically(!sortAlphabetically)}
+           checked={sortAlphabetically}
+         />
+         <label htmlFor="alpha-checkbox">Sort Alphabetically</label>
+       </li>
+     </ul>
+   </section>
 
-    <ProductCards
-      products={productsData}
-      sortByPrice={sortByPrice}
-      sortAlphabetically={sortAlphabetically}
-    />
-  </div>
+
+   <ProductCards
+     products={productsData}
+     sortByPrice={sortByPrice}
+     sortAlphabetically={sortAlphabetically}
+   />
+ </div>
 );
 };
+
 
 export { ProductPage };
