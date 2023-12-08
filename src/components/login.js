@@ -4,6 +4,7 @@ export function Login(){
 
     return(
         <form id="user-login" action="/profile" method="GET">
+            <div className='logincontainer'>
             <div className='header-container'>
                 <div className='userloginwelcome'>
                     <h1> Login </h1>
