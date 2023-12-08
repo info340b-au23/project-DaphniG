@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import {ProductPage} from './ProductPage'
+import { Routes,  Route } from 'react-router-dom';
 
 
 const ProductColumn = () => {
@@ -8,7 +13,9 @@ const ProductColumn = () => {
     Serum: false,
     Moisturizer: false,
     Toner: false,
-  })
+  });
+
+  // const navigate = useNavigate();
 
   // state needs to be updated to true once add button on Daphni's page is clicked on
   // and then replace the plus with the image
@@ -34,13 +41,17 @@ const ProductColumn = () => {
 
 
 export function AddButton() {
+  const navigate = useNavigate();
   const handleButtonClick = () => {
-    // figure out code thatnavigates to all products page
+    // figure out code that navigates to all products page
+    // <Route path="/ProductPage" element={<ProductPage />} />
+    navigate('/ProductPage');
+    // <li><Link to="/ProductPage"></Link></li>
   };
 
   return (
   <div className="add">
-            <button type="button" className="add-button">
+            <button type="button" className="add-button" onClick={handleButtonClick}>
               <img src="https://www.freeiconspng.com/thumbs/plus-icon/plus-icon-black-2.png" alt="plus-button" className="add-img" />
             </button>
         </div>
