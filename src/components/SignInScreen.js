@@ -5,9 +5,8 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { getDatabase, ref, set } from 'firebase/database';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { getDatabase, ref, set } from 'firebase/database';
 
 const firebaseUIConfig = {
   signInOptions: [
@@ -28,19 +27,43 @@ const firebaseUIConfig = {
 };
 
 function MySignInScreen() {
-  const auth = getAuth();
-  const [user, loading, error] = useAuthState(auth);
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      setUserLoggedIn(!!firebaseUser); // Set userLoggedIn based on firebaseUser
+      if (firebaseUser) {
+        const firstName = firebaseUser.displayName ? firebaseUser.displayName.split(' ')[0] : '';
+        const database = getDatabase();
+        const userRef = ref(database, `users/${firebaseUser.uid}`);
+
+        set(userRef, {
+          firstName: firstName,
+        })
+          .then(() => {
+            console.log('First Name saved to the database:', firstName);
+          })
+          .catch((error) => {
+            console.error('Error saving First Name:', error);
+          });
+
+        setUser(firebaseUser);
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
+    }, (authError) => {
+      setError(authError);
+      setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [auth]);
+  }, []);
 
   const handleSignOut = () => {
+    const auth = getAuth();
     signOut(auth)
       .then(() => {
         console.log('User signed out successfully');
@@ -58,35 +81,17 @@ function MySignInScreen() {
     return <p>Error: {error.message}</p>;
   }
 
-  if (userLoggedIn) {
-    if (user) {
-      const firstName = user.displayName ? user.displayName.split(' ')[0] : '';
-      const database = getDatabase();
-      const userRef = ref(database, `users/${user.uid}`);
-
-      set(userRef, {
-        firstName: firstName,
-      })
-        .then(() => {
-          console.log('First Name saved to the database:', firstName);
-        })
-        .catch((error) => {
-          console.error('Error saving First Name:', error);
-        });
-    }
-
+  if (user) {
     return (
       <div>
-        <p>Welcome, {user?.displayName}</p>
+        <p>Welcome, {user.displayName}</p>
         <button onClick={handleSignOut}>Sign Out</button>
       </div>
     );
   } else {
     return (
       <div>
-        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
-        {loading && <p>Loading...</p>}
-        {error && <p>Error: {error.message}</p>}
+        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={getAuth()} />
       </div>
     );
   }
