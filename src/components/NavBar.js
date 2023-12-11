@@ -19,6 +19,7 @@ function NavBar() {
           <li><NavLink to="/product">Build Routine</NavLink></li>
           <li><NavLink to="/quiz">Skin Quiz</NavLink></li>
           <li><NavLink to="/ProductPage">Product</NavLink></li>
+          <li><NavLink to="/SignInScreen">Sign In</NavLink></li>
         </ul>
       </div>
       {/* <img src={icon} alt="Navigation Icon" /> */}

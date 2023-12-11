@@ -1,6 +1,13 @@
-import { getAuth, EmailAuthProvider, signOut } from 'firebase/auth';
+import { useState, useEffect } from 'react';
+import {
+  getAuth,
+  EmailAuthProvider,
+  onAuthStateChanged,
+  signOut,
+} from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { getDatabase, ref, set } from 'firebase/database';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'; //install option 1
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 const firebaseUIConfig = {
   signInOptions: [
@@ -8,48 +15,58 @@ const firebaseUIConfig = {
       provider: EmailAuthProvider.PROVIDER_ID,
       requireDisplayName: true,
       customParameters: {
-        // Specify additional parameters you want to collect during sign-in
-        // In this case, 'displayName' is used for the first name
         prompt: 'Enter your first name'
       }
     },
+    // Other sign-in options like Google, Facebook, etc. if desired
   ],
   signInFlow: 'popup',
   credentialHelper: 'none',
   callbacks: {
-    signInSuccessWithAuthResult: () => {
-      return false;
-    }
+    signInSuccessWithAuthResult: () => false,
   }
 };
 
 function MySignInScreen() {
   const auth = getAuth();
+  const [user, loading, error] = useAuthState(auth);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUserLoggedIn(!!firebaseUser); // Set userLoggedIn based on firebaseUser
+    });
+
+    return () => unsubscribe();
+  }, [auth]);
 
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        // Optional: Perform any additional actions after successful sign-out
         console.log('User signed out successfully');
       })
-      .catch(err => {
+      .catch((err) => {
         console.error('Error signing out:', err);
       });
   };
 
-  const handleSignInSuccess = (authResult) => {
-    const user = authResult.user;
-    if (user && user.displayName) {
-      const firstName = user.displayName.split(' ')[0]; // Assuming the first name is entered as displayName
-      // Save the first name to the database
+  if (loading) {
+    return <p>Initializing user</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  if (userLoggedIn) {
+    if (user) {
+      const firstName = user.displayName ? user.displayName.split(' ')[0] : '';
       const database = getDatabase();
-      const userRef = ref(database, `users/${user.uid}`); // Reference to the user in the database
+      const userRef = ref(database, `users/${user.uid}`);
 
       set(userRef, {
         firstName: firstName,
-        
       })
-      
         .then(() => {
           console.log('First Name saved to the database:', firstName);
         })
@@ -57,25 +74,22 @@ function MySignInScreen() {
           console.error('Error saving First Name:', error);
         });
     }
-    return false;
-  };
 
-  const uiConfigWithCallbacks = {
-    ...firebaseUIConfig,
-    callbacks: {
-      ...firebaseUIConfig.callbacks,
-      signInSuccessWithAuthResult: handleSignInSuccess,
-    },
-  };
-
-  return (
-    <div>
-      <h1>My App</h1>
-      <p>Please sign-in:</p>
-      <StyledFirebaseAuth uiConfig={uiConfigWithCallbacks} firebaseAuth={auth} />
-      <button onClick={handleSignOut}>Sign Out</button>
-    </div>
-  );
+    return (
+      <div>
+        <p>Welcome, {user?.displayName}</p>
+        <button onClick={handleSignOut}>Sign Out</button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error.message}</p>}
+      </div>
+    );
+  }
 }
 
 export { MySignInScreen };
