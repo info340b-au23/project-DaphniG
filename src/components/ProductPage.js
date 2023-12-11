@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCards from './ProductCards';
-import skinCareData from './skin-data.json';
+import skinCareData from '../skincare.json';
 import { useLocation } from 'react-router-dom';
 
 const ProductPage = () => {
