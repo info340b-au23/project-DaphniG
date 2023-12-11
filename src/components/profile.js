@@ -18,6 +18,8 @@ import cleanserImage2 from './img/cleanser2.png';
 import cleanserImage3 from './img/cleanser3.png';
 import cleanserImage4 from './img/cleanser4.png';
 
+
+
 export function ProfileContainer({ userName }) {
     const [skinType, setSkinType] = useState('Unknown');
     useEffect(() => {
