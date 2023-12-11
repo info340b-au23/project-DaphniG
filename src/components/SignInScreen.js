@@ -49,6 +49,7 @@ function MySignInScreen() {
         firstName: firstName,
         
       })
+      
         .then(() => {
           console.log('First Name saved to the database:', firstName);
         })

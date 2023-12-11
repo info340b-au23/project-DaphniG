@@ -1,46 +1,81 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getDatabase, ref, push, set } from 'firebase/database';
+import { initializeApp } from 'firebase/app';
 
+import 'firebase/auth';
+    const firebaseConfig = {
+        apiKey: "AIzaSyDOw9fYVylR__dqfyLExXOe_nv015ILk-k",
+        authDomain: "info340naishla.firebaseapp.com",
+        projectId: "info340naishla",
+        storageBucket: "info340naishla.appspot.com",
+        messagingSenderId: "39116129578",
+        appId: "1:39116129578:web:37c3ef372d2ce0236e8a53"
+      };
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
 export function QuizForm(props) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const answers = {
-          q1: parseInt(document.querySelector('input[name="q1"]:checked').value),
-          q2: parseInt(document.querySelector('input[name="q2"]:checked').value),
-          q3: parseInt(document.querySelector('input[name="q3"]:checked').value),
-          q4: parseInt(document.querySelector('input[name="q4"]:checked').value),
-          q5: parseInt(document.querySelector('input[name="q5"]:checked').value),
-        };
-        // Calc total score
-        const totalScore = Object.values(answers).reduce((acc, val) => acc + val, 0);
-    
-        let skinType = "Unknown";
-        if (totalScore <= 7) {
-          skinType = "Dry";
-        } else if (totalScore <= 12) {
-          skinType = "Normal";
-        } else {
-          skinType = "Oily";
-        }
-    
-        console.log("submit the form");
-        console.log("skinType", skinType);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-        navigate("/profile");
-      }
+    const answers = {
+      q1: parseInt(document.querySelector('input[name="q1"]:checked').value),
+      q2: parseInt(document.querySelector('input[name="q2"]:checked').value),
+      q3: parseInt(document.querySelector('input[name="q3"]:checked').value),
+      q4: parseInt(document.querySelector('input[name="q4"]:checked').value),
+      q5: parseInt(document.querySelector('input[name="q5"]:checked').value),
+    };
 
+    const totalScore = Object.values(answers).reduce((acc, val) => acc + val, 0);
+    let skinType = 'Unknown';
 
-    return (
-        <form id="skin-quiz" onSubmit={handleSubmit}>
-            <div className='quiz-container'>
-                <div className="profile-tool-titles">
-                    <label For="username">
-                        <b> Name </b>
-                        <input id="username" name="username" type="text" />
-                    </label>
+    if (totalScore <= 7) {
+      skinType = 'Dry';
+    } else if (totalScore <= 12) {
+      skinType = 'Normal';
+    } else {
+      skinType = 'Oily';
+    }
+
+    const userId = 'your_user_id'; // Replace with your user ID
+    const userResultsRef = ref(db, `/quizResults/${userId}`);
+
+    try {
+      await push(userResultsRef, {
+        username,
+        answers,
+        skinType,
+        timestamp: Date.now(),
+      });
+
+      console.log('Quiz results saved to Firebase');
+      navigate('/profile');
+    } catch (error) {
+      console.error('Error saving quiz results to Firebase:', error);
+    }
+  };
+
+  return (
+    <form id="skin-quiz" onSubmit={handleSubmit}>
+      <div className="quiz-container">
+        <div className="profile-tool-titles">
+          <label htmlFor="username">
+            <b> Name </b>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </label>
                 </div>
                 <div className="question">
                     <p>1. How does your skin feel after cleansing?</p>
