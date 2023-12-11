@@ -1,8 +1,8 @@
-// TodoList.js
 import React, { useState } from 'react';
 
 function TodoList() {
-  const initialTodos = ['cleanser','serum','add product'];
+  const maxTodos = 6;
+  const initialTodos = ['cleanser', 'serum', 'add product'];
   const [todos, setTodos] = useState(initialTodos);
   const [editIndex, setEditIndex] = useState(null);
   const [newTodo, setNewTodo] = useState('');
@@ -15,7 +15,11 @@ function TodoList() {
   const handleSaveClick = () => {
     if (editIndex !== null) {
       const updatedTodos = [...todos];
-      updatedTodos[editIndex] = newTodo;
+      if (newTodo.trim() === '') {
+        updatedTodos.splice(editIndex, 1);
+      } else {
+        updatedTodos[editIndex] = newTodo;
+      }
       setTodos(updatedTodos);
       setEditIndex(null);
     }
@@ -25,8 +29,15 @@ function TodoList() {
     setNewTodo(e.target.value);
   };
 
+  const handleAddClick = () => {
+    if (todos.length < maxTodos) {
+      setTodos([...todos, '']);
+      setEditIndex(todos.length); // Set edit index to the new todo
+    }
+  };
+
   return (
-    <div className="todo-list">
+    <div className="todo-list ">
       <ul>
         {todos.map((todo, index) => (
           <li key={index} onClick={() => handleEditClick(index)}>
@@ -46,9 +57,11 @@ function TodoList() {
           </li>
         ))}
       </ul>
+      <button className="tiny-plus" onClick={handleAddClick}>
+        Add To Routine 
+      </button>
     </div>
   );
 }
 
 export default TodoList;
-

@@ -71,6 +71,7 @@ export function ProductContainer() {
   return (
     <main>
       <h1> Create Your Skincare Routine</h1>
+<<<<<<< HEAD
       <div className="container-box">
         <ProductColumn />
         <div className="add-product-column">
@@ -81,6 +82,18 @@ export function ProductContainer() {
           <AddButton productType="Toner" />
         </div>
       </div>
+=======
+    <div className="container-box">
+      <ProductColumn />
+      <div className="add-product-column">
+        <AddButton />
+        <AddButton />
+        <AddButton />
+        <AddButton />
+        <AddButton />
+      </div>
+    </div>
+>>>>>>> df2cb34455008fbf36d398809d824218c3f24022
     </main>
   );
 }

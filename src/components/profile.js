@@ -80,29 +80,29 @@ function SkinCalender(props) {
     // const handleAddTodo = (newTodo, setTodos) => {
     //     setTodos((prevTodos)=>[...prevTodos, newTodo]);
     // };
-    return (
-        <div className='todo-flexrow'>
-            <div className="todo-container">
-                <h2>Day 1</h2>
-                <TodoList todos={todos1} />
-            </div>
-            {/* Second set of TodoInput and TodoList */}
-            <div className="todo-container">
-                <h2>Day 2</h2>
-                {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos2)} /> */}
-                <TodoList todos={todos2} />
-            </div>
-            <div className="todo-container">
-                <h2>Day 3</h2>
-                {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos3)} /> */}
-                <TodoList todos={todos3} />
-            </div>
-            <div className="todo-container">
-                <h2>Day 4</h2>
-                {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos4)} /> */}
-                <TodoList todos={todos4} />
-            </div>
-
+    return(
+    <div className='todo-flexrow scrollmenu'>
+        <div className="todo-container">
+            <h2>Day 1</h2>
+            <TodoList todos={todos1} />
+        </div>
+             {/* Second set of TodoInput and TodoList */}
+        <div className="todo-container">
+        <h2>Day 2</h2>
+            {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos2)} /> */}
+            <TodoList todos={todos2} />
+        </div>
+        <div className="todo-container">
+        <h2>Day 3</h2>
+            {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos3)} /> */}
+            <TodoList todos={todos3} />
+        </div>
+        <div className="todo-container">
+        <h2>Day 4</h2>
+            {/* <TodoInput onAddTodo={(newTodo) => handleAddTodo(newTodo, setTodos4)} /> */}
+            <TodoList todos={todos4} />
+        </div>
+      
         </div>
 
     )

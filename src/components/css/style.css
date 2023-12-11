@@ -76,9 +76,9 @@ footer {
   color: #fff;
 }
   
-.imgself {
-  height: 150px;
-  width:150px;
+.flexcard .imgself {
+  width: 150px; /* Set your desired width here */
+  max-height: 160px;
 }
 
 /* naishla page */
@@ -131,6 +131,8 @@ header div:nth-child(2){
   margin: 0.5rem;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+  overflow: hidden;
+  max-width: 190px;
 }
 
 .flexcard p {
@@ -192,6 +194,14 @@ header div:nth-child(2){
     background-color: #f0f0f0;
     border-radius: 4px;
   }
+  .tiny-plus {
+    width: 100%;
+    padding: 1%;
+    height: 30px;
+    font-size: 14px;
+    margin-left: 8px;
+  }
+
 
 /* Scrollmenu*/
 .scrollmenu{
@@ -393,8 +403,15 @@ main {
 }
 
 /* Login page */
+
+.user-login{
+  align-items: center;
+
+
+}
+
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 200px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -408,7 +425,9 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 200px;
+  justify-content: center;
+  
 }
 
 .header-container {
