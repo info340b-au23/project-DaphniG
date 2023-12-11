@@ -8,6 +8,7 @@ import {ProductContainer } from './product-routine.js';
 import ProductPage  from './ProductPage.js';
 import {Login} from './login.js'
 import { Routes,  Route } from 'react-router-dom';
+import { MySignInScreen } from './SignInScreen.js';
 
 
 export default function App(props) {
@@ -23,6 +24,9 @@ export default function App(props) {
             <Route path="/product" element={<ProductContainer />} />
             <Route path="/quiz" element={<QuizForm setUserName={setUserName}/>} />
             <Route path="/ProductPage" element={<ProductPage />} />
+            <Route path="/SignInScreen" element={<MySignInScreen />} />
+
+
           </Routes>
         </main>
      <footer>
