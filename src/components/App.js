@@ -1,9 +1,11 @@
+
+
 import React, { useState } from 'react';
 import NavBar from './NavBar.js';
 import {QuizForm} from './quiz.js';
 import { ProfileContainer } from './profile';
 import {ProductContainer } from './product-routine.js';
-import {ProductPage } from './ProductPage.js';
+import ProductPage  from './ProductPage.js';
 import {Login} from './login.js'
 import { Routes,  Route } from 'react-router-dom';
 
@@ -29,7 +31,3 @@ export default function App(props) {
    </div>
  );
 }
-
-
-
-

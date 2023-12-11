@@ -1,7 +1,9 @@
 import React from 'react';
 
 
-const ProductCards = ({ products, sortByPrice, sortAlphabetically }) => {
+
+
+const ProductCards = ({ products, sortByPrice, sortAlphabetically,filteredProductType }) => {
  const sortProductsByPrice = (productList) => {
    return productList.slice().sort((a, b) => {
      const priceA = parseFloat(a.price.replace('$', ''));
@@ -20,9 +22,14 @@ const ProductCards = ({ products, sortByPrice, sortAlphabetically }) => {
  };
 
 
- let filteredProducts = products.filter(product =>
-   product.product_type.toLowerCase().includes('cleanser')
- );
+ let filteredProducts = products;
+
+ // Apply filtering based on the selected product type
+ if (filteredProductType) {
+   filteredProducts = filteredProducts.filter(product =>
+     product.product_type.toLowerCase().includes(filteredProductType)
+   );
+ }
 
 
  if (sortAlphabetically) {
