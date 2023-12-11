@@ -43,8 +43,8 @@ export function QuizForm(props) {
     } else {
       skinType = 'Oily';
     }
-
-    const userId = 'your_user_id'; // Replace with your user ID
+    const userDisplayName = ref(db,'users')
+    const userId = {userDisplayName}; // Replace with your user ID
     const userResultsRef = ref(db, `/quizResults/${userId}`);
 
     try {

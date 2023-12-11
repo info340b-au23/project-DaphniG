@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getDatabase, ref, get } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
 
 
 import SavedProducts from "./SavedProducts";
@@ -17,11 +19,32 @@ import cleanserImage3 from './img/cleanser3.png';
 import cleanserImage4 from './img/cleanser4.png';
 
 export function ProfileContainer({ userName }) {
+    const [skinType, setSkinType] = useState('Unknown');
+    useEffect(() => {
+        // Fetch user's skin type from Firebase when the component mounts
+        const auth = getAuth();
+        const user = auth.currentUser;
+    
+        if (user) {
+          const userId = user.uid;
+          const database = getDatabase();
+          const userRef = ref(database, `users/${userId}`);
+    
+          get(userRef).then((snapshot) => {
+            const userData = snapshot.val();
+            if (userData && userData.skinType) {
+              setSkinType(userData.skinType);
+            }
+          }).catch((error) => {
+            console.error('Error fetching user data:', error);
+          });
+        }
+      }, [userName]);
 
     return (
         <div>
 
-            <ProfileHeader userName={userName} />
+            <ProfileHeader userName={userName} skinType={skinType}/>
             <SkinProgress />
             <SkinCalender />
             <SavedDataProducts />
@@ -30,7 +53,7 @@ export function ProfileContainer({ userName }) {
     )
 };
 
-function ProfileHeader({ userName }) {
+function ProfileHeader({ userName,  skinType  }) {
     return (
         <header>
             <div className="flex-container center-container">
@@ -44,7 +67,7 @@ function ProfileHeader({ userName }) {
 
                     <div className='headertxt'>
                         <h1> Hello {userName}! </h1>
-                        <p> Skin Type: Dry Combination</p>
+                        <p> Skin Type:{skinType}</p>
                         <p> Skin Concerns: Dryness, Blemishes</p>
 
                     </div>
