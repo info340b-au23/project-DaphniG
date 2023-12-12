@@ -4,26 +4,31 @@ import {
   EmailAuthProvider,
   onAuthStateChanged,
   signOut,
+   GoogleAuthProvider
 } from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { getDatabase, ref, set } from 'firebase/database';
+import QuizForm from './quiz';
 
 const firebaseUIConfig = {
   signInOptions: [
     {
+      provider: GoogleAuthProvider.PROVIDER_ID,
+    },
+    {
       provider: EmailAuthProvider.PROVIDER_ID,
       requireDisplayName: true,
       customParameters: {
-        prompt: 'Enter your first name'
-      }
+        prompt: 'Enter your first name',
+      },
     },
-    // Other sign-in options like Google, Facebook, etc. if desired
+    // Other sign-in options like Facebook, etc., if desired
   ],
   signInFlow: 'popup',
   credentialHelper: 'none',
   callbacks: {
     signInSuccessWithAuthResult: () => false,
-  }
+  },
 };
 
 function MySignInScreen() {
@@ -44,9 +49,12 @@ function MySignInScreen() {
         })
           .then(() => {
             console.log('First Name saved to the database:', firstName);
+            console.log(user.uid);
           })
           .catch((error) => {
             console.error('Error saving First Name:', error);
+            
+
           });
 
         setUser(firebaseUser);
@@ -82,12 +90,15 @@ function MySignInScreen() {
   }
 
   if (user) {
+    console.log(user.uid);
     return (
       <div>
         <p>Welcome, {user.displayName}</p>
         <button onClick={handleSignOut}>Sign Out</button>
       </div>
     );
+
+ 
   } else {
     return (
       <div>
