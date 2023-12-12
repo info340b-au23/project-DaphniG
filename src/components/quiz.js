@@ -18,12 +18,12 @@ import 'firebase/auth';
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-export function QuizForm(props) {
-  const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+export function QuizForm({ userId }) {
+    console.log("I got it:", userId);
+    const [username, setUsername] = useState('');
+  
+    const handleSubmit = async (event) => {
+      event.preventDefault();
 
     const answers = {
       q1: parseInt(document.querySelector('input[name="q1"]:checked').value),
@@ -44,8 +44,8 @@ export function QuizForm(props) {
       skinType = 'Oily';
     }
 
-    const userId = 'your_user_id'; // Replace with your user ID
-    const userResultsRef = ref(db, `/quizResults/${userId}`);
+    const database = getDatabase();
+    const userResultsRef = ref(database, `quizResults/${uId}`);
 
     try {
       await push(userResultsRef, {
@@ -56,12 +56,11 @@ export function QuizForm(props) {
       });
 
       console.log('Quiz results saved to Firebase');
-      navigate('/profile');
+      // Redirect or perform any action after saving the quiz results
     } catch (error) {
       console.error('Error saving quiz results to Firebase:', error);
     }
   };
-
   return (
     <form id="skin-quiz" onSubmit={handleSubmit}>
       <div className="quiz-container">
