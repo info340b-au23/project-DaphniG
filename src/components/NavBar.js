@@ -14,7 +14,6 @@ function NavBar() {
       </div>
       <div id="menubar">
         <ul>
-          <li><NavLink to="/login"> Login</NavLink></li>
           <li><NavLink to="/profile">Profile</NavLink></li>
           <li><NavLink to="/product">Build Routine</NavLink></li>
           <li><NavLink to="/quiz">Skin Quiz</NavLink></li>
