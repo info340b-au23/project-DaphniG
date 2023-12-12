@@ -23,6 +23,15 @@ const ProductPage = () => {
     setFilteredProducts(filtered);
   }, [selectedType]);
 
+  const handleSortByPriceChange = () => {
+    setSortByPrice(true);
+    setSortAlphabetically(false);
+  };
+
+  const handleSortAlphabeticallyChange = () => {
+    setSortAlphabetically(true);
+    setSortByPrice(false);
+  };
 
   return (
     <div>
@@ -31,36 +40,31 @@ const ProductPage = () => {
         <ul className="boxes">
           <li>
             <input
-              type="checkbox"
-              id="price-checkbox"
-              onChange={() => setSortByPrice(!sortByPrice)}
+              type="radio"
+              id="price-radio"
+              name="sortType"
+              onChange={handleSortByPriceChange}
               checked={sortByPrice}
             />
-            <label htmlFor="price-checkbox">Sort by Price</label>
+            <label htmlFor="price-radio">Sort by Price</label>
           </li>
           <li>
             <input
-              type="checkbox"
-              id="alpha-checkbox"
-              onChange={() => setSortAlphabetically(!sortAlphabetically)}
+              type="radio"
+              id="alpha-radio"
+              name="sortType"
+              onChange={handleSortAlphabeticallyChange}
               checked={sortAlphabetically}
             />
-            <label htmlFor="alpha-checkbox">Sort Alphabetically</label>
+            <label htmlFor="alpha-radio">Sort Alphabetically</label>
           </li>
         </ul>
       </section>
 
-      {/* <section className="product-type-buttons">
-        <button onClick={() => filterByType('Cleanser')}>Cleanser</button>
-        <button onClick={() => filterByType('Toner')}>Toner</button>
-      </section> */}
-
       <ProductCards
-        // products={productsData}
         products={filteredProducts}
         sortByPrice={sortByPrice}
         sortAlphabetically={sortAlphabetically}
-        // filteredProductType={filteredProductType} // Pass the filtered product type to ProductCards
       />
     </div>
   );

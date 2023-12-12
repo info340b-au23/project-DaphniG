@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getDatabase, ref, push, set } from 'firebase/database';
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
 
 import 'firebase/auth';
     const firebaseConfig = {
@@ -18,9 +20,24 @@ import 'firebase/auth';
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-export function QuizForm({ userId }) {
-    console.log("I got it:", userId);
+export function QuizForm() {
     const [username, setUsername] = useState('');
+    const [userId, setUserId] = useState('');
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      const auth = getAuth();
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          // User is signed in.
+          setUserId(user.uid); // Set the userId state to the authenticated user's ID
+        } else {
+          // User is signed out.
+          setUserId('');
+        }
+      });
+    }, []);
   
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -45,7 +62,7 @@ export function QuizForm({ userId }) {
     }
 
     const database = getDatabase();
-    const userResultsRef = ref(database, `quizResults/${uId}`);
+    const userResultsRef = ref(database, `users/${userId}`);
 
     try {
       await push(userResultsRef, {
@@ -56,11 +73,12 @@ export function QuizForm({ userId }) {
       });
 
       console.log('Quiz results saved to Firebase');
-      // Redirect or perform any action after saving the quiz results
+      navigate('/profile');
     } catch (error) {
       console.error('Error saving quiz results to Firebase:', error);
     }
   };
+
   return (
     <form id="skin-quiz" onSubmit={handleSubmit}>
       <div className="quiz-container">
